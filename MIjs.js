@@ -120,6 +120,7 @@ $(document).ready(function(){
         });
 
     /* ============================ Funcion de mostrar y seleccionar ================== */
+
         var i =0;
         
         $("input[type=miselect]").click(function (){
@@ -128,14 +129,18 @@ $(document).ready(function(){
                 $(this).siblings("ul").removeClass("show");
             });
 
+            
+
             var this_e = $(this);
             var select = $(this).parent().siblings("select");
-            var target = $(this).siblings("ul");  
+            var target = $(this).siblings("ul");
+
+            
 
             $(target).tglclss("show");
 
             target.children("li").click(function (){
-                if(i<2){
+                if(i<1){
                     select.trigger('change');
                     select.trigger('click');
                     i++
@@ -159,8 +164,6 @@ $(document).ready(function(){
                 i=0;
             
         });
-
-
     /* ============================ Ocultar si se da 
     click en otro lado ================== */
 

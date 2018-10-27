@@ -1,0 +1,390 @@
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    --cFondoBody: #F0F0F0;
+    --cPrimary: blue;
+    --bAside:#0288D1;
+    transition: 0.15s;
+}
+
+.MI-control-group{
+    width: 80%;
+    position: relative;
+    margin: 40px auto;
+    padding: 10px;
+}
+.small{
+    width: 33%;
+}
+.medium{
+    width: 66%;
+}
+.large{
+    width: 100%;
+}
+.center{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+}
+
+
+.MI-control-group input{
+    width: 100%;
+    border:none;
+    border-bottom: 1px solid blue;
+    outline:none;
+    background: transparent;
+    padding: 5px;
+}
+
+.MI-control-group label{
+    position: absolute;
+    bottom:10px;
+    transition: 0.1s ease-in;
+    cursor: text;
+    user-select: none;
+}
+.MI-control-group i{
+    position: absolute;
+    bottom:20px;
+    left: -30px;
+    font-size: 20px;
+}
+.MI-control-group i.labelActive{
+    color:blue;
+}
+.MI-control-group label.labelActive{
+    bottom:35px;
+    font-size: 12px;
+    color:blue;
+}
+.MI-control-group label.labelActiveError{
+    color:red;
+}
+
+.MI-form-check{
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+}
+.MI-form-check > input[type="checkbox"]{
+    display: none;
+}
+.MI-form-check label{
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+}
+.MI-form-check > label.MI-check-label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    z-index: 0;
+    border: 1.5px solid #8a8a8a;
+    border-radius: 1px;
+    margin-top: 6px;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+input[type="checkbox"]:checked ~ label:before {
+    top: -8px;
+    width: 12px;
+    height: 22px;
+    border-style: solid;
+    border-width: 2px;
+    border-color: transparent green green transparent;
+    transform-origin: 100% 100%;
+    transform: rotate(400deg);
+
+}
+.MI-modal-footer {
+    padding: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.MI-modal-footer  button {
+    margin: 0px 10px;
+}
+
+.MI-modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+}
+.MI-modal-footer button.btn.btn-primary{
+    background: #4285F4;
+    border: none;
+    box-shadow: 0px 0px 5px rgba(0,0,0,0.5);
+    cursor: pointer;
+    border-radius: 2px;
+}
+
+.MI-modal-content{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    pointer-events: auto;
+    background-color: rgb(255, 255, 255);
+    box-shadow: 0px 0px 5px #fff;
+}
+.modal{
+    background: rgba(0,0,0,0.5);
+}
+
+.MI-section{
+    /*display: flex;
+    flex-direction: column;
+    justify-content: center;*/
+    background: white;
+    padding: 20px;
+    margin: auto;
+    user-select: none;
+}
+.MI-section-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    text-align: center;
+    font-size: 20px;
+    /*font-family:serif;*/
+    font-weight: bold;
+    /*border-bottom: 1px solid rgba(0,0,0,0.3);*/
+}
+
+.MI-form-radio{
+    position: relative;
+    display: flex;
+    /*justify-content: flex-end;*/
+    justify-content: center;
+}
+.MI-form-radio > input[type="radio"]{
+    display: none;
+}
+.MI-form-radio label{
+    padding-left: 35px;
+    position: relative;
+    cursor: pointer;
+}
+.MI-form-radio > label.MI-radio-label:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 17px;
+    height: 17px;
+    z-index: 0;
+    border: 1.5px solid #8a8a8a;
+    border-radius: 50%;
+    margin-top: 6px;
+    -webkit-transition: .2s;
+    transition: .2s;
+}
+input[type="radio"]:checked ~ label:before {
+    width: 17px;
+    height: 17px;
+    border:2px solid #4285F4;
+    background: #4285F4;
+}
+textarea.MI-control{
+    width: 100%;
+    background: transparent;
+    border:none;
+    border-bottom: 1px solid blue;
+    /*outline: none;*/
+    resize: both;
+    padding: 15px 5px;
+}
+textarea.MI-control:focus{
+    /*background: rgba(0,0,0,0.1);*/
+}
+label.txtActive{
+    bottom:-20px;
+    font-size: 12px;
+    color:blue;
+}
+.switch{
+    /*background: gray;*/
+}
+.switch label{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 5px;
+    cursor: pointer;
+}
+.switch label > input{
+    display: none;
+}
+
+.switch label .lever{
+    display: flex;
+    width: 40px;
+    height: 15px;
+    background: #64B5F6;
+    border-radius: 21px;
+    position: relative;
+    transition: .5s ease;
+    margin: 0px 15px;
+}
+.switch label .lever:before{
+    position: absolute;
+    content: '';
+    width: 21px;
+    height: 21px;
+    bottom: -3px;
+    background: #3D5AFE;
+    border-radius: 50%;
+    left: 0px;
+    transition: .3s ease;
+}
+.switch label > input:checked ~ span.lever:before{
+    left: 20px;
+}
+.switch label > input:checked ~ .lever{
+    background: #536DFE;
+}
+
+
+/*=====================*/
+/*=====================*/
+/*=====================*/
+/*=====================*/
+
+a{
+    text-decoration: none;
+    color:#fff;
+}
+body{
+    background: var(--cFondoBody);
+}
+
+aside.MI-aside{
+    display: flex;
+    flex-direction: column;
+    width: 25%;
+    height: 100%;
+    position: fixed;
+    z-index: 1000;
+    left: -100%;
+    transition: 0.15s;
+    top:0px;
+}
+.overside{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    top:0px;
+}
+aside.MI-aside.active{
+    left: -0%;
+}
+
+aside.MI-aside > div{
+    width: 100%;
+    height: 100%;
+    background: url('../img/fondo.jpg');
+    background-size:cover;
+    overflow: hidden;
+}
+
+aside.MI-aside > div > img{
+    padding: 20px;
+    width: 100%;
+    background: red;
+}
+.MI-aside-list li{
+    color:#fff;
+    list-style: none;
+    margin: 5px 0px;
+}
+.MI-aside-list li a{
+    padding: 15px;
+}
+.submenu{
+    width: 100%;
+    /*background: #456588;*/
+    border-bottom: 1px solid rgba(255,255,255,0.2);
+}
+.submenu > a{
+    display: flex;
+    justify-content: space-between;
+}
+.children{
+    display: none;
+}
+.children > li > a{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+}
+.children > li:hover{
+    background: rgba(0,0,0,0.3);
+}
+.MI-aside-list > li.submenu.active > a,.MI-aside-list > li.submenu > a:hover{
+    background: #448AFF;
+}
+.MI-aside-list > li.submenu > a > i{
+    transform: rotate(90deg);
+}
+.MI-aside-list > li.submenu.active > a > i{
+    transform: rotate(0deg);
+}
+.children > li > a >i{
+    font-size: 6px;
+    /*background: red;*/
+    color:rgba(255,255,255,0.5);
+}
+
+nav.MI-nav.aside{
+    display: block;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+}
+.MI-nav-logo{
+    display: flex;
+    align-items: center;
+    color:#fff;
+}
+.MI-nav-logo:nth-child(1){
+    cursor: pointer;
+}
+.MI-nav-logo img{
+    height: 30px;
+    margin-left: 20px;
+}
+nav.MI-nav.aside > div{
+    display: flex;
+    align-items: center;
+    padding-left: 50px;
+    width: 100%;
+    height: 100%;
+    background: #303F9F;
+    justify-content: space-between;
+}
+.MI-nav-menu{
+    display: flex;
+    align-items: center;
+}
+.MI-nav-menu > a{
+    height: 100%;
+    line-height: 50px;
+    padding: 0px 10px;
+}
+.MI-nav-menu > a:hover{
+    color:rgba(255, 255, 255, 0.8);
+}
