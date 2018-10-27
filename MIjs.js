@@ -105,60 +105,60 @@ $(document).ready(function(){
 
 
     /* ============================ Copia elementos ================== */
-        // $("select.mi").each(function (){
-        //     $(this).hide();
-        //     $(this).after("<div id='dv' class='MI-select-dv'><span class='caret'>▼</span><input type='miselect' value='Elige una opcion' data-toggle='#lss' readonly id='npt'><ul id='lss' class=''></ul></div>");
-        //     select_padre = $(this);
-        //     hijos_select = $(this).children("option");
-        //     hermano_div = $(this).siblings("div");
-        //     ul = $(hermano_div).children("ul");
-        //     hijos_select.each(function (){
-        //         hijo = $(this);
-        //         $(ul).append("<li>"+hijo.text()+"</li>");
-        //     });
-        //     hermano_div.children("input").val(select_padre.data().content);
-        // });
+        $("select.mi").each(function (){
+            $(this).hide();
+            $(this).after("<div id='dv' class='MI-select-dv'><span class='caret'>▼</span><input type='miselect' value='Elige una opcion' data-toggle='#lss' readonly id='npt'><ul id='lss' class=''></ul></div>");
+            select_padre = $(this);
+            hijos_select = $(this).children("option");
+            hermano_div = $(this).siblings("div");
+            ul = $(hermano_div).children("ul");
+            hijos_select.each(function (){
+                hijo = $(this);
+                $(ul).append("<li>"+hijo.text()+"</li>");
+            });
+            hermano_div.children("input").val(select_padre.data().content);
+        });
 
     /* ============================ Funcion de mostrar y seleccionar ================== */
         var i =0;
         
-        // $("input[type=miselect]").click(function (){
+        $("input[type=miselect]").click(function (){
 
-        //     $("input[type=miselect]").each(function (){
-        //         $(this).siblings("ul").removeClass("show");
-        //     });
+            $("input[type=miselect]").each(function (){
+                $(this).siblings("ul").removeClass("show");
+            });
 
-        //     var this_e = $(this);
-        //     var select = $(this).parent().siblings("select");
-        //     var target = $(this).siblings("ul");  
+            var this_e = $(this);
+            var select = $(this).parent().siblings("select");
+            var target = $(this).siblings("ul");  
 
-        //     $(target).tglclss("show");
+            $(target).tglclss("show");
 
-        //     target.children("li").click(function (){
-        //         if(i<2){
-        //             select.trigger('change');
-        //             select.trigger('click');
-        //             i++
-        //         }
+            target.children("li").click(function (){
+                if(i<2){
+                    select.trigger('change');
+                    select.trigger('click');
+                    i++
+                }
 
-        //         target_element = $(this);
-        //         target.children("li").removeClass("active");
-        //         target_element.addClass("active");
-        //         select.children("option").attr("selected",false);
+                target_element = $(this);
+                target.children("li").removeClass("active");
+                target_element.addClass("active");
+                select.children("option").attr("selected",false);
 
-        //         select.children("option").each(function (){
-        //             abuelo_hijo = $(this);
-        //             if(abuelo_hijo.index()==target_element.index()){
-        //                 target.removeClass("show");
-        //                 this_e.val(target_element.text());
-        //                 abuelo_hijo.attr("selected",true);
-        //                 return true;
-        //             }
-        //         });
-        //     });
-        //         i=0;
+                select.children("option").each(function (){
+                    abuelo_hijo = $(this);
+                    if(abuelo_hijo.index()==target_element.index()){
+                        target.removeClass("show");
+                        this_e.val(target_element.text());
+                        abuelo_hijo.attr("selected",true);
+                        return true;
+                    }
+                });
+            });
+                i=0;
             
-        // });
+        });
 
 
     /* ============================ Ocultar si se da 
